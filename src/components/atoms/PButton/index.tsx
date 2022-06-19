@@ -1,4 +1,4 @@
-import { TwBackgroundColorClass } from "tailwind.types";
+import { TwBackgroundColorClass } from "~/tailwind.types";
 import { Style } from "@/helpers";
 
 type Props = {
