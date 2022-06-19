@@ -1,0 +1,28 @@
+import { PHeading } from '..'
+import { Meta, Props, Story, Canvas } from '@storybook/addon-docs/blocks'
+import DefaultAvatar from "@/public/default-avatar.jpg";
+
+<Meta title="Atoms/PHeading" component={PHeading} />
+
+# PHeading
+
+社員の画像コンポーネント
+
+# Template
+export const Template = (args) => <PHeading {...args} />;
+
+## Example
+
+<Canvas>
+  <Story
+    name="PHeading"
+    args={{
+      tag: "h1",
+      text: "Heading"
+    }}>
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Props story="PHeading" />
