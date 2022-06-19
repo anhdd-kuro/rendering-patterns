@@ -1,21 +1,24 @@
-import { TextClass } from "tailwind.types";
-import { Style } from "@/helpers";
+import { TwTextColorClass } from "tailwind.types";
 import Link from "next/link";
 
 export type Props = {
   children: React.ReactNode;
   href: string;
-  textClass?: TextClass;
   isExternal: boolean;
+  textColorClass?: TwTextColorClass;
 };
 
 export const PLink: React.FC<Props> = ({ isExternal, ...props }) => {
   return isExternal ? <ExternalLink {...props} /> : <InternalLink {...props} />;
 };
 
-const ExternalLink: React.FC<Omit<Props, "isExternal">> = ({ children, textClass, ...props }) => {
+const ExternalLink: React.FC<Omit<Props, "isExternal">> = ({
+  children,
+  textColorClass,
+  ...props
+}) => {
   return (
-    <a {...props} rel="noopener" target="_blank" className={Style.joinClass([textClass])}>
+    <a {...props} rel="noopener" target="_blank" className={textColorClass}>
       {children}
     </a>
   );
@@ -24,12 +27,12 @@ const ExternalLink: React.FC<Omit<Props, "isExternal">> = ({ children, textClass
 const InternalLink: React.FC<Omit<Props, "isExternal">> = ({
   children,
   href,
-  textClass,
+  textColorClass,
   ...props
 }) => {
   return (
     <Link href={href}>
-      <a {...props} className={Style.joinClass([textClass])}>
+      <a {...props} className={textColorClass}>
         {children}
       </a>
     </Link>

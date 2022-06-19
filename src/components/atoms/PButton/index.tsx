@@ -1,4 +1,4 @@
-import { BackgroundClass } from "tailwind.types";
+import { TwBackgroundColorClass } from "tailwind.types";
 import { Style } from "@/helpers";
 
 type Props = {
@@ -6,8 +6,8 @@ type Props = {
   rounded?: boolean;
   bordered?: boolean;
   children?: React.ReactNode;
+  backgroundColorClass?: TwBackgroundColorClass;
   onClick?: void;
-  bgClass?: BackgroundClass;
 };
 
 const disabledStyles = "opacity-60 cursor-not-allowed";
@@ -20,7 +20,7 @@ const PButton: React.FC<Props> = ({
   bordered = true,
   rounded = false,
   onClick,
-  bgClass,
+  backgroundColorClass,
 }) => {
   return (
     <button
@@ -29,7 +29,7 @@ const PButton: React.FC<Props> = ({
         `${disabled && disabledStyles}`,
         `${bordered && borderedStyles}`,
         `${rounded && roundedStyles}`,
-        bgClass,
+        backgroundColorClass,
       ])}
       disabled={disabled}
       onClick={() => onClick}
