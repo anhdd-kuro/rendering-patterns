@@ -1,17 +1,16 @@
 import Image from "next/image";
 import { Style } from "@/helpers";
-import DefaultAvatar from "@/public/default-avatar.jpg";
 
 type Props = {
   alt: string;
-  src?: string;
+  src: string;
   cycled?: boolean;
 };
 
-const PAvatar: React.FC<Props> = ({ alt, src, cycled = false }) => {
+const PImage: React.FC<Props> = ({ alt, src, cycled = false }) => {
   return (
     <Image
-      src={src || DefaultAvatar}
+      src={src}
       alt={alt}
       layout="responsive"
       width="100%"
@@ -25,4 +24,4 @@ const PAvatar: React.FC<Props> = ({ alt, src, cycled = false }) => {
   );
 };
 
-export { PAvatar };
+export { PImage };
