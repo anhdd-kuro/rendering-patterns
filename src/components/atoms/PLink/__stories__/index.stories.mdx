@@ -1,0 +1,28 @@
+import { PLink } from '..';
+import { Meta, Props, Story, Canvas } from '@storybook/addon-docs/blocks';
+
+<Meta title="Atoms/PLink" component={PLink} />
+
+# PLink
+
+Linkコンポーネント
+
+# Template
+export const Template = (args) => <PLink {...args}> Link </PLink>;
+
+## Example
+
+<Canvas>
+  <Story
+    name="PLink"
+    args={{
+      href: "/",
+      isExternal: false,
+      textClass: ""
+    }}>
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Props story="PLink" />
