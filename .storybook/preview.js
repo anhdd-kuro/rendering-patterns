@@ -1,4 +1,9 @@
 import '../src/styles/globals.css';
+import Image from 'next/image';
+
+Image.defaultProps = {
+  unoptimized: true,
+};
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
