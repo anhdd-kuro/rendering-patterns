@@ -1,0 +1,28 @@
+import { PImage } from '..'
+import { Meta, Props, Story, Canvas } from '@storybook/addon-docs/blocks'
+import DefaultAvatar from "@/public/default-avatar.jpg";
+
+<Meta title="Atoms/PImage" component={PImage} />
+
+# PImage
+
+社員の画像コンポーネント
+
+# Template
+export const Template = (args) => <PImage {...args} />;
+
+## Example
+
+<Canvas>
+  <Story
+    name="PImage"
+    args={{
+      alt: "Default Avatar",
+      src: DefaultAvatar
+    }}>
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Props story="PImage" />
