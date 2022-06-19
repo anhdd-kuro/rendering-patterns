@@ -1,0 +1,26 @@
+import { PAvatar } from '..'
+import { Meta, Props, Story, Canvas } from '@storybook/addon-docs/blocks'
+
+<Meta title="Atoms/PAvatar" component={PAvatar} />
+
+# PAvatar
+
+社員の画像コンポーネント
+
+# Template
+export const Template = (args) => <PAvatar {...args}> Click Me </PAvatar>;
+
+## Example
+
+<Canvas>
+  <Story
+    name="PAvatar"
+    args={{
+      alt: "Not Found"
+    }}>
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Props story="PAvatar" />
