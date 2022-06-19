@@ -1,0 +1,26 @@
+import { PTag } from '..'
+import { Meta, Props, Story, Canvas } from '@storybook/addon-docs/blocks'
+
+<Meta title="Atoms/PTag" component={PTag} />
+
+# PTag
+
+Buttonコンポーネント
+
+# Template
+export const Template = (args) => <PTag {...args}> Click Me </PTag>;
+
+## Example
+
+<Canvas>
+  <Story
+    name="PTag"
+    args={{
+      label: "Label"
+    }}>
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Props story="PTag" />
