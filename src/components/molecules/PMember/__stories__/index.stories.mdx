@@ -1,0 +1,38 @@
+import { PMember } from '..';
+import { Meta, Props, Story, Canvas } from '@storybook/addon-docs/blocks';
+
+<Meta title="Molecules/PMember" component={PMember} />
+
+# PMember
+
+Memberコンポーネント
+
+# Template
+
+export const Template = (args) =>
+  <div className="w-[300px]">
+    <PMember {...args}> Link </PMember>
+  </div>;
+
+## Example
+
+<Canvas>
+  <Story
+    name="PMember"
+    args={{
+      member: {
+        interview: {
+          url: "/"
+        },
+        role: "Human Tactics Executive",
+        nickname: "Dustin Schuster",
+        catchCopy: "Do consequat irure enim eu non reprehenderit ipsum ad incididunt sit.",
+        imageUrl: "",
+      }
+    }}>
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Props story="PMember" />
