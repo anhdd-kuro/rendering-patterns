@@ -1,0 +1,31 @@
+import { PWriter } from '..';
+import { Meta, Props, Story, Canvas } from '@storybook/addon-docs/blocks';
+
+<Meta title="Molecules/PWriter" component={PWriter} />
+
+# PWriter
+
+PWriterコンポーネント
+
+# Template
+
+export const Template = (args) => <PWriter {...args} />;
+
+
+## Example
+
+<!-- TODO: Fix args -->
+<Canvas>
+  <Story
+    name="PWriter"
+    args={{
+      name: "Darryl Gaylord",
+      role: "Legacy Web Orchestrator",
+      imageSrc: ""
+    }}>
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Props story="PWriter" />
