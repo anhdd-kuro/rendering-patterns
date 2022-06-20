@@ -1,0 +1,31 @@
+import { PNews } from '..';
+import { Meta, Props, Story, Canvas } from '@storybook/addon-docs/blocks';
+
+<Meta title="Molecules/PNews" component={PNews} />
+
+# PNews
+
+Newsコンポーネント
+
+# Template
+
+export const Template = (args) => <PNews {...args} />
+
+## Example
+
+<Canvas>
+  <Story
+    name="PNews"
+    args={{
+      news: {
+        date: new Date("2022-04-27"),
+        text: "Dignissimos quis repudiandae vel pariatur nemo aut.",
+        url: "/"
+      }
+    }}>
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Props story="PNews" />

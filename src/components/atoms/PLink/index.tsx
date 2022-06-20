@@ -1,4 +1,4 @@
-import { TwTextColorClass } from "@/tailwind.types";
+import { TwTextColorClass, TwFontSizeClass } from "@/tailwind.types";
 import Link from "next/link";
 
 export type Props = {
@@ -6,6 +6,7 @@ export type Props = {
   href: string;
   isExternal: boolean;
   textColorClass?: TwTextColorClass;
+  fontSizeClass?: TwFontSizeClass;
 };
 
 export const PLink: React.FC<Props> = ({ isExternal, ...props }) => {
