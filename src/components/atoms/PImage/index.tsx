@@ -1,16 +1,32 @@
 import Image from "next/image";
 import { Style } from "@/helpers";
+import DefaultAvatar from "@/public/default-avatar.jpg";
+
+type Role = "avatar" | "any";
 
 type Props = {
   alt: string;
   src: string | StaticImageData;
   cycled?: boolean;
+  role?: Role;
 };
 
-const PImage: React.FC<Props> = ({ alt, src, cycled = false }) => {
+const PImage: React.FC<Props> = ({ alt, src, role = "any", cycled = false }) => {
+  let parsedImageSrc = src;
+
+  switch (role) {
+    case "avatar":
+      parsedImageSrc = src || DefaultAvatar;
+      break;
+
+    default:
+      parsedImageSrc = src || DefaultAvatar;
+      break;
+  }
+
   return (
     <Image
-      src={src}
+      src={parsedImageSrc}
       alt={alt}
       layout="responsive"
       width="100%"
