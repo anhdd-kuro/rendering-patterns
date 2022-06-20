@@ -12,7 +12,9 @@
     "build-storybook": "build-storybook",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "make:component": "hygen new component",
+    "postmake:component": "yarn lint:fix"
   },
   "dependencies": {
     "next": "12.1.6",
@@ -45,7 +47,9 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-storybook": "^0.5.12",
     "husky": "^8.0.1",
+    "hygen": "^6.2.7",
     "lint-staged": "^13.0.1",
+    "lodash": "^4.17.21",
     "postcss": "^8.4.14",
     "postcss-import": "^14.1.0",
     "prettier": "^2.7.0",
