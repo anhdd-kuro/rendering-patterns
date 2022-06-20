@@ -1,6 +1,5 @@
 import { PImage, PLink } from "@/components/atoms";
 import { Style } from "@/helpers";
-import DefaultAvatar from "@/public/default-avatar.jpg";
 
 export type Props = {
   member: {
@@ -18,7 +17,7 @@ export const PMember: React.FC<Props> = ({ member }) => {
   return (
     <figure className="relative flex border-box flex-col">
       <div className="relative">
-        <PImage alt={`${member.nickname}の画像`} src={member.imageUrl || DefaultAvatar} cycled />
+        <PImage alt={`${member.nickname}の画像`} src={member.imageUrl} cycled role="avatar" />
         {member.interview && (
           <div
             className={Style.joinClass([
