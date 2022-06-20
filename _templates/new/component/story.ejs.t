@@ -1,5 +1,5 @@
 ---
-to: src/components/<%= level %>/<%= name %>/__stories__/index.mdx
+to: src/components/<%= level %>/<%= name %>/__stories__/index.stories.mdx
 ---
 
 import { <%= name %> } from '..';
@@ -13,9 +13,9 @@ import { Meta, Props, Story, Canvas } from '@storybook/addon-docs/blocks';
 
 # Template
 <% if (!hasChildren) { -%>
-export const Template = (args) => <<%= name %>> {...args} />;
+export const Template = (args) => <<%= name %> {...args} />;
 <% } else { %>
-export const Template = (args) => <<%= name %>> {...args} > Slot </<%= name %>>;
+export const Template = (args) => <<%= name %> {...args} > Slot </<%= name %>>;
 <% } %>
 
 ## Example
