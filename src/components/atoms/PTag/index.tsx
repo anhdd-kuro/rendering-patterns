@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { TwBackgroundColorClass, TwTextColorClass } from "tailwind.types";
+import { TwBackgroundColorClass, TwTextColorClass } from "@/tailwind.types";
 import { Style } from "@/helpers";
 
 type Props = {
