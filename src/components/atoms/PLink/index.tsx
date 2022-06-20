@@ -1,4 +1,4 @@
-import { TwTextColorClass } from "tailwind.types";
+import { TwTextColorClass } from "@/tailwind.types";
 import Link from "next/link";
 
 export type Props = {
