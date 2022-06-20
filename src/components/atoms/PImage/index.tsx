@@ -3,7 +3,7 @@ import { Style } from "@/helpers";
 
 type Props = {
   alt: string;
-  src: string;
+  src: string | StaticImageData;
   cycled?: boolean;
 };
 
