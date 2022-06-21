@@ -34,7 +34,7 @@ export const PBlog: React.FC<Props> = ({
           <PImage src={thumbnail.src} alt={thumbnail.alt || `${title}の画像`} />
         </PLink>
       </div>
-      <figcaption className={Style.Style.clsx("relative flex-1 flex flex-col pb-12")}>
+      <figcaption className={Style.clsx("relative flex-1 flex flex-col pb-12")}>
         <div className="flex items-center leading-none">
           <p className="text-gray-500 text-[0.8em] font-bold">
             {Date.toString(date, "yyyy-mm-dd")}
