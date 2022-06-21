@@ -1,27 +1,29 @@
 import Link from "next/link";
-import { TwBackgroundColorClass, TwTextColorClass } from "@/tailwind.types";
+import { TwBackgroundColorClass, TwTextColorClass, TwFontSizeClass } from "@/tailwind.types";
 import { Style } from "@/helpers";
 
 type Props = {
   href?: string;
   label: string;
-  bgClass?: TwBackgroundColorClass;
-  textClass?: TwTextColorClass;
+  bgColorClass?: TwBackgroundColorClass;
+  textColorClass?: TwTextColorClass;
+  fontSizeClass?: TwFontSizeClass;
 };
 
 const defaultStyles = Style.joinClass([
   "inline-flex items-center justify-center",
-  "p-3 min-h-6 rounded",
+  "py-2 px-4 min-h-6 rounded-full",
   "before:content-['#']",
 ]);
 
 const PTag: React.FC<Props> = ({
   href,
-  textClass = "text-state-900",
-  bgClass = "bg-gray-200",
+  textColorClass = "text-state-900",
+  bgColorClass = "bg-gray-200",
+  fontSizeClass,
   ...props
 }) => {
-  const styles = Style.joinClass([defaultStyles, `${textClass}`, `${bgClass}`]);
+  const styles = Style.joinClass([defaultStyles, textColorClass, bgColorClass, fontSizeClass]);
 
   return href ? (
     <LinkTag href={href} {...props} styles={styles} />
