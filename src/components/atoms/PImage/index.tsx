@@ -1,5 +1,5 @@
 import Image from "next/image";
-import clsx from "clsx";
+import { Style } from "@/helpers";
 import DefaultAvatar from "@/public/default-avatar.jpg";
 
 type Role = "avatar" | "any";
@@ -31,7 +31,7 @@ const PImage: React.FC<Props> = ({ alt, src, role = "any", cycled = false }) => 
       layout="responsive"
       width="100%"
       height="100%"
-      className={clsx(cycled && "rounded-full")}
+      className={Style.clsx(cycled && "rounded-full")}
       // width={500} automatically provided
       // height={500} automatically provided
       // blurDataURL="data:..." // automatically provided
