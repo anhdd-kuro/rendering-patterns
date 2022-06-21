@@ -1,4 +1,4 @@
-export type DateFormat = "yyyy-mm-dd";
+export type DateFormat = "yyyy-mm-dd" | "yyyy/mm/dd";
 
 export const to2DigitsMonthString = (date: Date) => ("0" + (date.getMonth() + 1)).slice(-2);
 
@@ -9,6 +9,11 @@ export const toString = (date: Date, format: DateFormat): string => {
   switch (format) {
     case "yyyy-mm-dd":
       formattedDate = `${date.getFullYear()}-${to2DigitsMonthString(date)}-${to2DigitsDateString(
+        date,
+      )}`;
+      break;
+    case "yyyy/mm/dd":
+      formattedDate = `${date.getFullYear()}/${to2DigitsMonthString(date)}/${to2DigitsDateString(
         date,
       )}`;
       break;
