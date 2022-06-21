@@ -1,5 +1,5 @@
 import { PHeading, PImage, PLink, PTag } from "@/components/atoms";
-import { Date, Type, StyledTailwind, Style } from "@/helpers";
+import { Date, Type, Style } from "@/helpers";
 
 type Props = {
   url: string;
@@ -32,13 +32,11 @@ export const PBlog: React.FC<Props> = ({
           <PImage src={thumbnail.src} alt={thumbnail.alt || `${title}の画像`} />
         </PLink>
       </div>
-      <figcaption className={Style.clsx("relative flex-1 flex flex-col pb-12")}>
-        <div className="flex items-center leading-none">
-          <p className="text-gray-500 text-[0.8em] font-bold">
-            {Date.toString(date, "yyyy-mm-dd")}
-          </p>
+      <figcaption className={Style.clsx("relative flex-1 flex flex-col gap-3")}>
+        <div className="flex items-center leading-none text-[0.8em]">
+          <p className="text-gray-500 font-bold">{Date.toString(date, "yyyy-mm-dd")}</p>
           <p
-            className="ml-1 mb-[0.3em] px-1 text-[0.8em]"
+            className="ml-1 mb-[0.3em] px-1"
             style={{
               background: "linear-gradient(180deg, #fff, #fff 56%, #f6d322 57%, #f6d322)",
             }}
@@ -46,14 +44,10 @@ export const PBlog: React.FC<Props> = ({
             {category}
           </p>
         </div>
-        <StyledTailwind
-          component={PHeading}
-          props={{ text: title, tag: heading, fontSizeClass: "text-2xl", fontBold: true }}
-          className="mt-3"
-        />
-        <div className="mt-3 space-x-2">
+        <PHeading text={title} tag={heading} fontSizeClass="text-2xl" />
+        <div className="space-x-2">
           {tags.map((tag, index) => (
-            <PTag label={tag} key={index} fontSizeClass="text-sm" />
+            <PTag label={tag} key={index} fontSizeClass="text-xs" />
           ))}
         </div>
       </figcaption>
