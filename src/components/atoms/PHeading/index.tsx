@@ -1,11 +1,11 @@
-import { Style } from "@/helpers";
+import { Style, Type } from "@/helpers";
 import { TwFontSizeClass } from "@/tailwind.types";
 
 type Props = {
   text: string;
-  tag: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  tag: Type.HeadingTag;
   fontBold?: boolean;
-  fontSizeClass: TwFontSizeClass;
+  fontSizeClass?: TwFontSizeClass;
 };
 
 export const PHeading: React.FC<Props> = ({
@@ -14,5 +14,9 @@ export const PHeading: React.FC<Props> = ({
   fontBold = false,
   fontSizeClass = "text-base",
 }: Props) => {
-  return <Tag className={Style.joinClass([fontBold && "font-bold", fontSizeClass])}>{text}</Tag>;
+  return (
+    <Tag className={Style.joinClass(["p-heading", fontBold && "font-bold", fontSizeClass])}>
+      {text}
+    </Tag>
+  );
 };
