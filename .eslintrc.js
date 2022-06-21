@@ -6,8 +6,14 @@ module.exports = {
     es6: true,
   },
   parser: "@typescript-eslint/parser",
-  plugins: ["@typescript-eslint", "prettier"],
-  extends: ["next/core-web-vitals", "prettier", "plugin:@typescript-eslint/recommended"],
+  plugins: ["@typescript-eslint", "prettier", "import"],
+  extends: [
+    "next/core-web-vitals",
+    "prettier",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+  ],
   rules: {
     "prettier/prettier": "error",
   },
