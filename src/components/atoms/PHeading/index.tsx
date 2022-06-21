@@ -1,5 +1,6 @@
-import { Style, Type } from "@/helpers";
+import { Type } from "@/helpers";
 import { TwFontSizeClass } from "@/tailwind.types";
+import clsx from "clsx";
 
 type Props = {
   text: string;
@@ -14,9 +15,5 @@ export const PHeading: React.FC<Props> = ({
   fontBold = false,
   fontSizeClass = "text-base",
 }: Props) => {
-  return (
-    <Tag className={Style.joinClass(["p-heading", fontBold && "font-bold", fontSizeClass])}>
-      {text}
-    </Tag>
-  );
+  return <Tag className={clsx("p-heading", fontBold && "font-bold", fontSizeClass)}>{text}</Tag>;
 };

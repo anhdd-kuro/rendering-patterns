@@ -1,5 +1,5 @@
 import { TwBackgroundColorClass } from "@/tailwind.types";
-import { Style } from "@/helpers";
+import clsx from "clsx";
 
 type Props = {
   disabled?: boolean;
@@ -24,13 +24,13 @@ const PButton: React.FC<Props> = ({
 }) => {
   return (
     <button
-      className={Style.joinClass([
+      className={clsx(
         "flex-center",
         `${disabled && disabledStyles}`,
         `${bordered && borderedStyles}`,
         `${rounded && roundedStyles}`,
         backgroundColorClass,
-      ])}
+      )}
       disabled={disabled}
       onClick={() => onClick}
     >
