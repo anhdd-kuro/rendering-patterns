@@ -1,5 +1,5 @@
 import tw from "tailwind-styled-components";
-import { Style } from "@/helpers";
+import clsx from "clsx";
 
 const twStyledFactory = <T,>(
   Component: React.FC<T> | HTMLElement,
