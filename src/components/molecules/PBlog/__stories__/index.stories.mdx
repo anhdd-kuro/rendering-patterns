@@ -1,0 +1,37 @@
+import { PBlog } from '..';
+import { Meta, Props, Story, Canvas } from '@storybook/addon-docs/blocks';
+
+<Meta title="Molecules/PBlog" component={PBlog} />
+
+# PBlog
+
+PBlogコンポーネント
+
+# Template
+export const Template = (args) => <PBlog {...args} />;
+
+
+## Example
+
+<Canvas>
+  <Story
+    name="PBlog"
+    args={{
+      url: "/",
+      thumbnail: {
+        src: "http://placeimg.com/640/480",
+        alt: "Quia saepe facilis et eum ea tempore quo.",
+      },
+      date: new Date("2022/06/06"),
+      category: "Rustic",
+      title: "Nulla error repellat repellat omnis et.",
+      tags: ["natus", "deleniti"],
+      heading: "h3",
+      creditContent: (<div>Additional Content</div>),
+    }}>
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Props story="PBlog" />
