@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { TwBackgroundColorClass, TwTextColorClass, TwFontSizeClass } from "@/tailwind.types";
-import { Style } from "@/helpers";
+import clsx from "clsx";
 
 type Props = {
   href?: string;
@@ -10,11 +10,11 @@ type Props = {
   fontSizeClass?: TwFontSizeClass;
 };
 
-const defaultStyles = Style.joinClass([
+const defaultStyles = clsx(
   "inline-flex items-center justify-center",
   "py-2 px-4 min-h-6 rounded-full",
   "before:content-['#']",
-]);
+);
 
 const PTag: React.FC<Props> = ({
   href,
@@ -23,7 +23,7 @@ const PTag: React.FC<Props> = ({
   fontSizeClass,
   ...props
 }) => {
-  const styles = Style.joinClass([defaultStyles, textColorClass, bgColorClass, fontSizeClass]);
+  const styles = clsx(defaultStyles, textColorClass, bgColorClass, fontSizeClass);
 
   return href ? (
     <LinkTag href={href} {...props} styles={styles} />

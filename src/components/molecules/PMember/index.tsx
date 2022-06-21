@@ -1,5 +1,5 @@
 import { PImage, PLink } from "@/components/atoms";
-import { Style } from "@/helpers";
+import clsx from "clsx";
 
 export type Props = {
   member: {
@@ -20,14 +20,14 @@ export const PMember: React.FC<Props> = ({ member }) => {
         <PImage alt={`${member.nickname}の画像`} src={member.imageUrl} cycled role="avatar" />
         {member.interview && (
           <div
-            className={Style.joinClass([
+            className={clsx(
               "flex-center absolute top-0 right-0 transform translate-x-[20%] translate-y-[-20%]",
               "text-[0.6em] font-bold tracking-tight text-center",
               "w-2/6 h-2/6 rounded-full px-1",
               "bg-yellow-400 text-blue-800",
               "transition-all duration-500 ease-linear",
               "hover:rotate-[1turn] hover:opacity-100 cursor-pointer",
-            ])}
+            )}
           >
             <PLink isExternal={false} href={member.interview.url}>
               インタビュー
