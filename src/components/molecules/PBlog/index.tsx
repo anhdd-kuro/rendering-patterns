@@ -1,7 +1,5 @@
 import { PHeading, PImage, PLink, PTag } from "@/components/atoms";
-import { Date, Type, Style } from "@/helpers";
-
-const StyledTailwind = Style.StyledTailwind;
+import { Date, Type, StyledTailwind, Style } from "@/helpers";
 
 type Props = {
   url: string;
