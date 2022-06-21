@@ -12,7 +12,7 @@ type Props = {
 
 const defaultStyles = Style.clsx(
   "inline-flex items-center justify-center",
-  "py-2 px-4 min-h-6 rounded-full",
+  "py-[0.5em] px-[1em] min-h-6 rounded-full",
   "before:content-['#']",
 );
 
