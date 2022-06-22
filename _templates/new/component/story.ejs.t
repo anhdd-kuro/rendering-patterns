@@ -7,7 +7,7 @@ import { Meta, Props, Story, Canvas } from '@storybook/addon-docs/blocks';
 
 <Meta title="<%= titleLevel %>/<%= name %>" component={<%= name %>} />
 
-# <%= name %>
+# Overview
 
 <%= name %>コンポーネント
 
