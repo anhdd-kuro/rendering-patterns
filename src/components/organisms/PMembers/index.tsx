@@ -9,7 +9,7 @@ type Props = {
 export const PMembers: React.FC<Props> = ({ members }) => {
   return (
     <div>
-      <ul className="grid gap-x-[5%] gap-y-8 grid-cols-5">
+      <ul className="grid gap-x-[5%] gap-y-8 grid-cols-5 px-4">
         {members?.map((member, index) => (
           <li key={index}>
             <PMember member={member} />
