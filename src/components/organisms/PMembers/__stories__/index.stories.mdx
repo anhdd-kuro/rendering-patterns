@@ -1,0 +1,42 @@
+import { PMembers } from '..';
+import { Meta, Props, Story, Canvas } from '@storybook/addon-docs/blocks';
+
+<Meta title="Organisms/PMembers" component={PMembers} />
+
+# PMembers
+
+PMembersコンポーネント
+
+# Template
+export const Template = (args) => <PMembers {...args} />;
+
+
+## Example
+
+<Canvas>
+  <Story
+    name="PMembers"
+    args={(() => {
+      let members = [];
+      const member = {
+        interview: {
+          url: "/"
+        },
+        role: "Human Tactics Executive",
+        nickname: "Dustin Schuster",
+        catchCopy: "Do consequat irure enim eu non reprehenderit ipsum ad incididunt sit.",
+        imageUrl: "",
+      }
+      for (var i = 0; i < 10; i++) {
+        members[i] = {...member};
+      }
+      return {
+        members
+      };
+    })()}>
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Props story="PMembers" />
