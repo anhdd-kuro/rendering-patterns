@@ -18,9 +18,9 @@ export const PMembers: React.FC<Props> = ({ members }) => {
       </ul>
       <div
         className={Style.clsx(
-          "w-2/5 min-w-[300px] mt-20 mx-auto ",
+          "mt-16 mx-auto ",
           "font-bold text-sm hover:opacity-50",
-          "border rounded-full",
+          "border rounded",
           "[&>*]:block [&>*]:py-4 [&>*]:text-center",
         )}
       >
