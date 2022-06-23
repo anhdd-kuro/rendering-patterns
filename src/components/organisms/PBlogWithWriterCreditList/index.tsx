@@ -1,3 +1,5 @@
+import { PLink } from "@/components/atoms";
+import { Style } from "@/helpers";
 import { PBlogWithWriterCredit } from "../PBlogWithWriterCredit";
 
 type Props = {
@@ -6,12 +8,26 @@ type Props = {
 
 export const PBlogWithWriterCreditList: React.FC<Props> = ({ blogs }) => {
   return (
-    <ul className="flex flex-col gap-y-8">
-      <li>
+    <div>
+      <ul className="flex flex-col gap-y-8">
         {blogs?.map((blog, index) => (
-          <PBlogWithWriterCredit writer={blog.writer} blog={blog.blog} key={index} />
+          <li key={index}>
+            <PBlogWithWriterCredit writer={blog.writer} blog={blog.blog} />
+          </li>
         ))}
-      </li>
-    </ul>
+      </ul>
+      <div
+        className={Style.clsx(
+          "mt-16 mx-auto ",
+          "font-bold text-sm hover:opacity-50",
+          "border rounded",
+          "[&>*]:block [&>*]:py-4 [&>*]:text-center",
+        )}
+      >
+        <PLink href="/blog" isExternal={false}>
+          ブログをもっと見る →
+        </PLink>
+      </div>
+    </div>
   );
 };
