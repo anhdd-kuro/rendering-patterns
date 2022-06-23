@@ -1,0 +1,47 @@
+import { PBlogWithWriterCreditList } from '..';
+import { Meta, Props, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { Faker } from '@/helpers';
+import Image from "@/public/default-avatar.jpg";
+
+<Meta title="Organisms/PBlogWithWriterCreditList" component={PBlogWithWriterCreditList} />
+
+# Overview
+
+PBlogWithWriterCreditListコンポーネント
+
+# Template
+export const Template = (args) => <PBlogWithWriterCreditList {...args} />;
+
+
+## Example
+
+<Canvas>
+  <Story
+    name="PBlogWithWriterCreditList"
+    args={{
+      blogs: Faker.createFakeArrayFromObject({
+        writer: {
+          name: "Darryl Gaylord",
+          role: "Legacy Web Orchestrator",
+          imageSrc: ""
+        },
+        blog: {
+          url: "/",
+          thumbnail: {
+            src: Image,
+            alt: "Quia saepe facilis et eum ea tempore quo.",
+          },
+          date: new Date("2022/06/06"),
+          category: "Rustic",
+          title: "Nulla error repellat repellat omnis et.",
+          tags: ["natus", "deleniti"],
+          heading: "h3",
+        }
+      }, 10)
+    }}>
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Props story="PBlogWithWriterCreditList" />
