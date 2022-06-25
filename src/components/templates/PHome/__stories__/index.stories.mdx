@@ -1,0 +1,27 @@
+import { PHome } from '..';
+import { Meta, Props, Story, Canvas } from '@storybook/addon-docs/blocks';
+
+<Meta title="Templates/PHome" component={PHome} />
+
+# Overview
+
+PHomeコンポーネント
+
+# Template
+export const Template = (args) => <PHome {...args} />;
+
+
+## Example
+
+<!-- TODO: Fix args -->
+<Canvas>
+  <Story
+    name="PHome"
+    args={{
+    }}>
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Props story="PHome" />

@@ -1,7 +1,7 @@
 import { PImage, PLink } from "@/components/atoms";
 import { Style } from "@/helpers";
 
-export type Props = {
+type Props = {
   member: {
     interview: {
       url: string;
@@ -23,7 +23,7 @@ export const PMember: React.FC<Props> = ({ member }) => {
             className={Style.clsx(
               "flex-center absolute top-0 right-0 transform translate-x-[20%] translate-y-[-20%]",
               "text-[0.6em] font-bold tracking-tight text-center",
-              "w-2/5 h-2/5 rounded-full px-1",
+              "w-2/5 h-2/5 rounded-full p-2 box-content",
               "bg-yellow-400 text-blue-800",
               "transition-all duration-500 ease-linear",
               "hover:rotate-[1turn] hover:opacity-100 cursor-pointer",
