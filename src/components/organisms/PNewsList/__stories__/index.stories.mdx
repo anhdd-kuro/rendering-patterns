@@ -1,0 +1,32 @@
+import { PNewsList } from '..';
+import { Meta, Props, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { Faker } from '@/helpers';
+
+<Meta title="Organisms/PNewsList" component={PNewsList} />
+
+# Overview
+
+PNewsListコンポーネント
+
+# Template
+export const Template = (args) => <PNewsList {...args} />;
+
+
+## Example
+
+<Canvas>
+  <Story
+    name="PNewsList"
+    args={{
+      news: Faker.createFakeArrayFromObject({
+        date: new Date("2022-04-27"),
+        text: "Dignissimos quis repudiandae vel pariatur nemo aut.",
+        url: "/"
+      }, 5)
+    }}>
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Props story="PNewsList" />
