@@ -1,11 +1,12 @@
 import { Type, Style } from "@/helpers";
-import { TwFontSizeClass } from "@/tailwind.types";
+import { TwFontSizeClass, TwTextColorClass } from "@/tailwind.types";
 
 type Props = {
   text: string;
   tag: Type.HeadingTag;
   fontBold?: boolean;
   fontSizeClass?: TwFontSizeClass;
+  textColorClass?: TwTextColorClass;
 };
 
 export const PHeading: React.FC<Props> = ({
@@ -13,8 +14,13 @@ export const PHeading: React.FC<Props> = ({
   tag: Tag,
   fontBold = false,
   fontSizeClass = "text-base",
+  textColorClass,
 }: Props) => {
   return (
-    <Tag className={Style.clsx("p-heading", fontBold && "font-bold", fontSizeClass)}>{text}</Tag>
+    <Tag
+      className={Style.clsx("p-heading", fontBold && "font-bold", fontSizeClass, textColorClass)}
+    >
+      {text}
+    </Tag>
   );
 };
