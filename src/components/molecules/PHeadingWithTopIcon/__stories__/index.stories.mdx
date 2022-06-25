@@ -1,0 +1,28 @@
+import { PHeadingWithTopIcon } from '..'
+import { Meta, Props, Story, Canvas } from '@storybook/addon-docs/blocks'
+import DefaultAvatar from "@/public/default-avatar.jpg";
+
+<Meta title="Molecules/PHeadingWithTopIcon" component={PHeadingWithTopIcon} />
+
+# PHeadingWithTopIcon
+
+社員の画像コンポーネント
+
+# Template
+export const Template = (args) => <PHeadingWithTopIcon {...args} />;
+
+## Example
+
+<Canvas>
+  <Story
+    name="PHeadingWithTopIcon"
+    args={{
+      tag: "h1",
+      text: "Heading"
+    }}>
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Props story="PHeadingWithTopIcon" />
