@@ -1,3 +1,4 @@
+import { Style } from "@/helpers";
 import { TwTextColorClass, TwFontSizeClass } from "@/tailwind.types";
 import Link from "next/link";
 
@@ -9,31 +10,13 @@ export type Props = {
   fontSizeClass?: TwFontSizeClass;
 };
 
-export const PLink: React.FC<Props> = ({ isExternal, ...props }) => {
-  return isExternal ? <ExternalLink {...props} /> : <InternalLink {...props} />;
-};
-
-const ExternalLink: React.FC<Omit<Props, "isExternal">> = ({
-  children,
-  textColorClass,
-  ...props
-}) => {
+export const PLink: React.FC<Props> = ({ isExternal, href, children, ...styleClass }) => {
   return (
-    <a {...props} rel="noopener" target="_blank" className={textColorClass}>
-      {children}
-    </a>
-  );
-};
-
-const InternalLink: React.FC<Omit<Props, "isExternal">> = ({
-  children,
-  href,
-  textColorClass,
-  ...props
-}) => {
-  return (
-    <Link href={href}>
-      <a {...props} className={textColorClass}>
+    <Link href={href} passHref={isExternal}>
+      <a
+        className={Style.clsx(styleClass)}
+        {...(isExternal && { rel: "noopener", target: "_blank" })}
+      >
         {children}
       </a>
     </Link>
