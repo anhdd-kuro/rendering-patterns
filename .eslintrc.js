@@ -16,5 +16,7 @@ module.exports = {
   ],
   rules: {
     "prettier/prettier": "error",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "import/no-anonymous-default-export": "off",
   },
 };
