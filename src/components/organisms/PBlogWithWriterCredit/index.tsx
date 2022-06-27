@@ -4,10 +4,11 @@ import { useMemo } from "react";
 
 type Props = {
   writer: React.ComponentProps<typeof PWriter>;
-  blog: React.ComponentProps<typeof PBlog>;
+  blog: React.ComponentProps<typeof PBlog>["data"];
+  heading: React.ComponentProps<typeof PBlog>["heading"];
 };
 
-export const PBlogWithWriterCredit: React.FC<Props> = ({ writer, blog }) => {
+export const PBlogWithWriterCredit: React.FC<Props> = ({ writer, blog, heading }) => {
   const Writer = useMemo(
     () => (
       <div className="absolute right-0 bottom-0 text-sm">
@@ -17,5 +18,5 @@ export const PBlogWithWriterCredit: React.FC<Props> = ({ writer, blog }) => {
     [writer],
   );
 
-  return <PBlog {...blog} creditContent={Writer} />;
+  return <PBlog data={blog} heading={heading} creditContent={Writer} />;
 };
