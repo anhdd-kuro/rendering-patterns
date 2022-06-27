@@ -1,5 +1,7 @@
-// eslint-disable-next-line
-const defaultColors = require("tailwindcss/colors");
+/* eslint-disable */
+const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
+/* eslint-enable */
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -9,7 +11,8 @@ module.exports = {
     "./src/helper/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    colors: defaultColors,
+    colors: colors,
+    extend: {},
   },
   plugins: [],
 };
