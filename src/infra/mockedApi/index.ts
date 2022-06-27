@@ -33,7 +33,7 @@ export function makeServer() {
       server.createList("Blog", 10, {
         url: "/",
         thumbnail: thumbnail,
-        date: new Date("2022/06/06"),
+        date: "2022/06/06",
         category: "Rustic",
         title: "Nulla error repellat repellat omnis et.",
         tags: ["natus", "deleniti"],
