@@ -36,7 +36,8 @@ export const PBlog: React.FC<Props> = ({ data, heading, creditContent }) => {
           <p
             className="ml-1 mb-[0.3em] px-1"
             style={{
-              background: "linear-gradient(180deg, #fff, #fff 56%, #f6d322 57%, #f6d322)",
+              background:
+                "linear-gradient(180deg, transparent, transparent 56%, #f6d322 57%, #f6d322)",
             }}
           >
             {data.category}
