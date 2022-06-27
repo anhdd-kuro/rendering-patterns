@@ -10,9 +10,9 @@ export const PBlogWithWriterCreditList: React.FC<Props> = ({ blogs }) => {
   return (
     <div>
       <ul className="flex flex-col gap-y-8">
-        {blogs?.map((blog, index) => (
+        {blogs?.map((item, index) => (
           <li key={index}>
-            <PBlogWithWriterCredit writer={blog.writer} blog={blog.blog} />
+            <PBlogWithWriterCredit writer={item.writer} blog={item.blog} />
           </li>
         ))}
       </ul>
