@@ -1,5 +1,4 @@
-// import axiosClient from "@/infra/axiosClient";
-import { blogSchema } from "@/domain/blog";
+import { blogSchema } from "@/features/blog/domain";
 import { graphQLClient, gql } from "@/infra/graphqlClient";
 
 const query = gql`

@@ -1,5 +1,5 @@
 import z from "zod";
-import { memberSchema } from "../member";
+import { memberSchema } from "@/features/member/domain";
 
 export const blogSchema = z.object({
   id: z.string(),
