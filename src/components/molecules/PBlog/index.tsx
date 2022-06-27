@@ -3,15 +3,16 @@ import { Date, Type, Style } from "@/helpers";
 
 type Props = {
   data: {
+    id: string;
     url: string;
-    thumbnail: {
+    thumbnail?: {
       src: string;
       alt: string;
     };
     date: Date;
     category: string;
     title: string;
-    tags: string[];
+    tags?: string[];
   };
   heading: Type.HeadingTag;
   creditContent: React.ReactNode;
@@ -22,7 +23,11 @@ export const PBlog: React.FC<Props> = ({ data, heading, creditContent }) => {
     <figure className="relative flex justify-between">
       <div role="img" className="relative w-32 h-32 overflow-hidden mr-10">
         <PLink href={data.url} isExternal={false}>
-          <PImage src={data.thumbnail.src} alt={data.thumbnail.alt || `${data.title}の画像`} />
+          <PImage
+            src={data.thumbnail?.src}
+            role="thumbnail"
+            alt={data.thumbnail?.alt || `${data.title}の画像`}
+          />
         </PLink>
       </div>
       <figcaption className={Style.clsx("relative flex-1 flex flex-col gap-3")}>
@@ -39,7 +44,7 @@ export const PBlog: React.FC<Props> = ({ data, heading, creditContent }) => {
         </div>
         <PHeading text={data.title} tag={heading} fontSizeClass="text-2xl" />
         <div className="space-x-2">
-          {data.tags.map((tag, index) => (
+          {data.tags?.map((tag, index) => (
             <PTag label={tag} key={index} fontSizeClass="text-xs" />
           ))}
         </div>

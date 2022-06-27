@@ -3,16 +3,17 @@ import { Style } from "@/helpers";
 import { PBlogWithWriterCredit } from "../PBlogWithWriterCredit";
 
 type Props = {
-  blogs: React.ComponentProps<typeof PBlogWithWriterCredit>[];
+  blogs: Omit<React.ComponentProps<typeof PBlogWithWriterCredit>, "heading">[];
+  heading: React.ComponentProps<typeof PBlogWithWriterCredit>["heading"];
 };
 
-export const PBlogWithWriterCreditList: React.FC<Props> = ({ blogs }) => {
+export const PBlogWithWriterCreditList: React.FC<Props> = ({ blogs, heading }) => {
   return (
     <div>
       <ul className="flex flex-col gap-y-8">
         {blogs?.map((item, index) => (
           <li key={index}>
-            <PBlogWithWriterCredit writer={item.writer} blog={item.blog} />
+            <PBlogWithWriterCredit writer={item.writer} blog={item.blog} heading={heading} />
           </li>
         ))}
       </ul>
