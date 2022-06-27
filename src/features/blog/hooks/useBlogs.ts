@@ -1,6 +1,6 @@
-import { fetchBlog } from "@/infra/api/blogs";
 import { useEffect, useState } from "react";
-import { Blog } from "@/domain/blog";
+import { fetchBlog } from "../services/api";
+import { Blog } from "../domain";
 
 export const useBlogs = () => {
   const [blogs, setBlogs] = useState<Blog[]>([]);

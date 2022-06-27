@@ -1,6 +1,6 @@
-import { fetchMember } from "@/infra/api/members";
 import { useEffect, useState } from "react";
-import { Member } from "@/domain/member";
+import { fetchMember } from "../services/api";
+import { Member } from "../domain";
 
 export const useMembers = () => {
   const [members, setMembers] = useState<Member[]>([]);

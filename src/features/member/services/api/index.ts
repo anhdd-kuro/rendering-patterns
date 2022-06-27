@@ -1,5 +1,4 @@
-// import axiosClient from "@/infra/axiosClient";
-import { memberSchema } from "@/domain/member";
+import { memberSchema } from "@/features/member/domain";
 import { graphQLClient, gql } from "@/infra/graphqlClient";
 
 const query = gql`
@@ -15,7 +14,6 @@ const query = gql`
 `;
 
 export const fetchMember = async () => {
-  // const res = await axiosClient.post("", { data: graphqlQuery });
   const data = await graphQLClient.request(query);
 
   const validatedData = memberSchema.array().parse(data.members);
