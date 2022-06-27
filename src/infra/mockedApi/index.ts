@@ -1,21 +1,6 @@
 import { createServer } from "miragejs";
 import { createGraphQLHandler } from "@miragejs/graphql";
-
-const graphQLSchema = `
-type Member {
-  id: ID!
-  nickname: String!
-  role: String!
-  firstName: String
-  lastName: String
-  catchCopy: String
-  imageUrl: String
-}
-
-type Query {
-  members: [Member]
-}
-`;
+import graphQLSchema from "./schema.gql";
 
 export function makeServer() {
   return createServer({
@@ -30,7 +15,7 @@ export function makeServer() {
       this.post("", graphQLHandler);
     },
     seeds(server) {
-      server.create("Member", {
+      server.createList("Member", 10, {
         // @ts-ignore
         role: "Human Tactics Executive",
         firstName: "Charity",

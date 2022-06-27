@@ -1,0 +1,13 @@
+type Member {
+  id: ID!
+  nickname: String!
+  role: String!
+  firstName: String
+  lastName: String
+  catchCopy: String
+  imageUrl: String
+}
+
+type Query {
+  members: [Member]
+}
