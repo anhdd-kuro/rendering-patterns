@@ -1,6 +1,7 @@
 {
   "cSpell.words": [
-    "clsx"
+    "clsx",
+    "miragejs"
   ],
   "tailwindCSS.experimental.classRegex": [
     "tw`([^`]*)", // tw`...`
