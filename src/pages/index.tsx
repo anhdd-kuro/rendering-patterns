@@ -1,7 +1,7 @@
 import { PHeadingWithTopIcon } from "@/components/molecules/PHeadingWithTopIcon";
 import { PNewsList, PBlogWithWriterCreditList, PMembers, PHome } from "@/components";
 import type { NextPage } from "next";
-import { useMembers } from "@/infra/hooks/member";
+import { useMembers } from "@/hooks/member";
 import { useMemo } from "react";
 
 const Home: NextPage = () => {
