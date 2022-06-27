@@ -3,17 +3,28 @@ import { PNewsList, PBlogWithWriterCreditList, PMembers, PHome } from "@/compone
 import type { NextPage } from "next";
 import { useMembers } from "@/hooks/member";
 import { useMemo } from "react";
+import { useBlogs } from "@/hooks/blog";
 
 const Home: NextPage = () => {
   const { members } = useMembers();
   const displayMembers = useMemo(
     () =>
       members.map((member) => ({
-        nickname: member.nickname,
+        ...member,
         role: member.role || "",
         catchCopy: member.catchCopy || "",
       })),
     [members],
+  );
+
+  const { blogs } = useBlogs();
+  const displayBlogs = useMemo(
+    () =>
+      blogs.map(({ writer, ...blog }) => ({
+        blog: { ...blog, date: new Date(blog.date) },
+        writer: { name: writer.nickname, ...writer },
+      })),
+    [blogs],
   );
 
   return (
@@ -29,7 +40,7 @@ const Home: NextPage = () => {
           fontSizeClass="text-2xl"
         />
       }
-      blogsSectionContent={<PBlogWithWriterCreditList blogs={[]} />}
+      blogsSectionContent={<PBlogWithWriterCreditList blogs={displayBlogs} heading="h3" />}
       membersSectionTitle={
         <PHeadingWithTopIcon
           tag="h2"

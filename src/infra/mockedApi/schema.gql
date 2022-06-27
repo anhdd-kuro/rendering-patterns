@@ -8,6 +8,24 @@ type Member {
   imageUrl: String
 }
 
+type Thumbnail {
+  id: ID!
+  src: String!
+  alt: String!
+}
+
+type Blog {
+  id: ID!
+  url: String!
+  date: String!
+  category: String!
+  title: String!
+  writer: Member!
+  tags: [String]
+  thumbnail: Thumbnail
+}
+
 type Query {
   members: [Member]
+  blogs: [Blog]
 }

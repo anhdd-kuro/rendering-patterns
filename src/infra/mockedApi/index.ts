@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { createServer } from "miragejs";
 import { createGraphQLHandler } from "@miragejs/graphql";
 import graphQLSchema from "./schema.gql";
@@ -15,14 +16,28 @@ export function makeServer() {
       this.post("", graphQLHandler);
     },
     seeds(server) {
-      server.createList("Member", 10, {
-        // @ts-ignore
+      const members = server.createList("Member", 10, {
         role: "Human Tactics Executive",
         firstName: "Charity",
         lastName: "Mayer",
         nickname: "Dustin Schuster",
         catchCopy: "Do consequat irure enim eu non reprehenderit ipsum ad incididunt sit.",
         imageUrl: "",
+      });
+
+      const thumbnail = server.create("Thumbnail", {
+        src: "",
+        alt: "Quia saepe facilis et eum ea tempore quo.",
+      });
+
+      server.createList("Blog", 10, {
+        url: "/",
+        thumbnail: thumbnail,
+        date: new Date("2022/06/06"),
+        category: "Rustic",
+        title: "Nulla error repellat repellat omnis et.",
+        tags: ["natus", "deleniti"],
+        writer: members[Math.floor(Math.random() * 10)],
       });
     },
   });
