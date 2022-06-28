@@ -7,7 +7,7 @@ type Props = {
   };
   role: string;
   nickname: string;
-  catchCopy: string;
+  catchCopy?: string;
   imageUrl?: string;
 };
 
