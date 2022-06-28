@@ -6,14 +6,12 @@ import { useMemo } from "react";
 import { useBlogs } from "@/features/blog/hooks";
 
 const Home: NextPage = () => {
-  const { members } = useMembers();
+  const { data: members } = useMembers();
   const displayMembers = useMemo(
     () =>
-      members.map((member) => ({
+      members?.map((member) => ({
         ...member,
-        role: member.role || "",
-        catchCopy: member.catchCopy || "",
-      })),
+      })) ?? [],
     [members],
   );
 

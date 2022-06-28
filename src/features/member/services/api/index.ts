@@ -1,22 +1,12 @@
 import { memberSchema } from "@/features/member/domain";
-import { graphQLClient, gql } from "@/infra/graphqlClient";
+import { graphQLClient, createQueryFromObject } from "@/infra/graphqlClient";
 
-const query = gql`
-  {
-    members {
-      id
-      nickname
-      catchCopy
-      imageUrl
-      role
-    }
-  }
-`;
+const defaultQuery = createQueryFromObject("members", memberSchema.shape);
 
-export const fetchMember = async () => {
-  const data = await graphQLClient.request(query);
+export const getMembers = async (query: string = defaultQuery) => {
+  const { members } = await graphQLClient.request(query);
 
-  const validatedData = memberSchema.array().parse(data.members);
+  const validatedData = memberSchema.array().parse(members);
 
   return validatedData;
 };
