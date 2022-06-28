@@ -1,4 +1,5 @@
 import { GraphQLClient, gql } from "graphql-request";
+export { gql };
 
 export const graphQLClient = new GraphQLClient(process.env.API_SERVER || "", {
   headers: {
@@ -8,4 +9,10 @@ export const graphQLClient = new GraphQLClient(process.env.API_SERVER || "", {
 
 export const request = graphQLClient.request;
 
-export { gql };
+export const createQueryFromObject = <T extends object>(model: string, obj: T) => gql`
+{
+  ${model} {
+    ${Object.keys(obj).join(" ")}
+  }
+}
+`;
