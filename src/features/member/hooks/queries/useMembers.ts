@@ -1,4 +1,3 @@
-// import { useEffect, useState } from "react";
 import { getMembers } from "@/features/member/services/api";
 import { useQuery, UseQueryOptions } from "react-query";
 import { Member } from "../../domain";
