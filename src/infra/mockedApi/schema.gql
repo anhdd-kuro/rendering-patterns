@@ -25,6 +25,19 @@ type Blog {
   thumbnail: Thumbnail
 }
 
+input MemberInput {
+  nickname: String!
+  role: String!
+  firstName: String
+  lastName: String
+  catchCopy: String
+  imageUrl: String
+}
+
+type Mutation {
+  createMember(input: MemberInput!): Member
+}
+
 type Query {
   members: [Member]
   blogs: [Blog]
