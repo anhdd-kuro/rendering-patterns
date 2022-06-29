@@ -14,9 +14,17 @@
     "coverage": "vitest run --coverage",
     "prepare": "husky install",
     "make:component": "hygen new component",
-    "postmake:component": "yarn lint:fix"
+    "postmake:component": "yarn lint:fix -- --dir './src/components'",
+    "make:gql": "graphql-codegen",
+    "postmake:gql": "yarn lint:fix -- --dir './src/infra/graphql'"
   },
   "dependencies": {
+    "@graphql-codegen/add": "^3.1.1",
+    "@graphql-codegen/typescript": "^2.5.1",
+    "@graphql-codegen/typescript-operations": "^2.4.2",
+    "@graphql-codegen/typescript-react-query": "^3.5.14",
+    "graphql": "^16.5.0",
+    "graphql-codegen-typescript-validation-schema": "^0.5.0",
     "next": "12.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0"
@@ -26,6 +34,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.18.5",
+    "@graphql-codegen/cli": "^2.6.2",
     "@miragejs/graphql": "^0.1.13",
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-essentials": "^6.5.9",
