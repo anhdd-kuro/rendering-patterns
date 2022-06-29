@@ -7,8 +7,6 @@ export const graphQLClient = new GraphQLClient(process.env.API_SERVER || "", {
   },
 });
 
-export const request = graphQLClient.request;
-
 export const createQueryFromObject = <T extends object>(model: string, obj: T) => gql`
 {
   ${model} {
@@ -16,3 +14,15 @@ export const createQueryFromObject = <T extends object>(model: string, obj: T) =
   }
 }
 `;
+
+export const fetcher = <TData, TVariables>(
+  operation: string,
+  variables?: TVariables,
+  options?: RequestInit["headers"],
+): (() => Promise<TData>) => {
+  return async () => {
+    const { data } = await graphQLClient.request(operation, variables, options);
+
+    return data;
+  };
+};

@@ -1,0 +1,20 @@
+schema: './src/infra/mockedApi/schema.gql'
+documents: './src/features/**/*.gql'
+generates:
+  ./src/infra/graphql/generated.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-query
+      - typescript-validation-schema
+      - add:
+          content: '/* eslint-disable */'
+    config:
+      # fetcher: graphql-request
+      fetcher:
+        func: '@/infra/graphql/graphqlClient#fetcher'
+        isReactHook: false
+      schema: zod
+      scalarSchemas:
+        Date: z.date()
+        Email: z.string().email()
