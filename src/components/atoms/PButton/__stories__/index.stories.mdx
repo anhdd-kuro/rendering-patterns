@@ -1,4 +1,4 @@
-import { PButton } from '..'
+import { PButton } from '..';
 import { Meta, Props, Story, Canvas } from '@storybook/addon-docs/blocks';
 
 <Meta title="Atoms/PButton" component={PButton} />
@@ -7,15 +7,15 @@ import { Meta, Props, Story, Canvas } from '@storybook/addon-docs/blocks';
 
 Buttonコンポーネント
 
-# Template
-export const Template = (args) => <PButton {...args}> Click Me </PButton>;
+## Template
+export const Template = (args) => <PButton {...args}>Click Me</PButton>;
 
 ## Example
 
 <Canvas>
   <Story
     name="PButton"
-    args={{}}>
+    args={{}}
   >
     {Template.bind({})}
   </Story>
