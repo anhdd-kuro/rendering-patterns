@@ -11,7 +11,7 @@ import { Meta, Props, Story, Canvas } from '@storybook/addon-docs/blocks';
 
 <%= name %>コンポーネント
 
-# Template
+## Template
 <% if (!hasChildren) { -%>
 export const Template = (args) => <<%= name %> {...args} />;
 <% } else { %>
@@ -24,7 +24,7 @@ export const Template = (args) => <<%= name %> {...args} > Slot </<%= name %>>;
 <Canvas>
   <Story
     name="<%= name %>"
-    args={{}}>
+    args={{}}
   >
     {Template.bind({})}
   </Story>
