@@ -3,6 +3,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
+      "@storybook/jest": ["vitest"],
       "~/*": ["./*"],
     },
     "target": "es5",
@@ -19,6 +20,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "types": ["vitest/globals"]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "tailwind.types.ts"],
   "exclude": ["node_modules"]

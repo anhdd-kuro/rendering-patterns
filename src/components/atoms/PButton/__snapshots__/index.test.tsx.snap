@@ -1,0 +1,88 @@
+// Vitest Snapshot v1
+
+exports[`Atoms/PButton > Button disabled > attributes 1`] = `
+<button
+  class="flex-center opacity-60 cursor-not-allowed border border-gray-300 false"
+  disabled=""
+  type="button"
+>
+  Disabled Button
+</button>
+`;
+
+exports[`Atoms/PButton > Button disabled > attributes 2`] = `
+<button
+  class="flex-center opacity-60 cursor-not-allowed border border-gray-300 false"
+  disabled=""
+  type="button"
+>
+  Disabled Button
+</button>
+`;
+
+exports[`Atoms/PButton > Button disabled > click event 1`] = `
+<button
+  class="flex-center opacity-60 cursor-not-allowed border border-gray-300 false"
+  disabled=""
+  type="button"
+>
+  Disabled Button
+</button>
+`;
+
+exports[`Atoms/PButton > Button disabled > click event 2`] = `
+<button
+  class="flex-center opacity-60 cursor-not-allowed border border-gray-300 false"
+  disabled=""
+  type="button"
+>
+  Disabled Button
+</button>
+`;
+
+exports[`Atoms/PButton > Button disabled > render 1`] = `
+<button
+  class="flex-center opacity-60 cursor-not-allowed border border-gray-300 false"
+  disabled=""
+  type="button"
+>
+  Disabled Button
+</button>
+`;
+
+exports[`Atoms/PButton > Button disabled > render 2`] = `
+<button
+  class="flex-center opacity-60 cursor-not-allowed border border-gray-300 false"
+  disabled=""
+  type="button"
+>
+  Disabled Button
+</button>
+`;
+
+exports[`Atoms/PButton > Button type > should have button default type 1`] = `
+<button
+  class="flex-center false border border-gray-300 false"
+  type="button"
+>
+  Button
+</button>
+`;
+
+exports[`Atoms/PButton > Button type > should have button default type 2`] = `
+<button
+  class="flex-center false border border-gray-300 false"
+  type="button"
+>
+  Button
+</button>
+`;
+
+exports[`Atoms/PButton > Button type > should have given type 1`] = `
+<button
+  class="flex-center false border border-gray-300 false"
+  type="submit"
+>
+  Typed Button
+</button>
+`;
