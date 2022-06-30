@@ -3,7 +3,6 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
-      "@storybook/jest": ["vitest"],
       "~/*": ["./*"],
     },
     "target": "es5",
