@@ -1,0 +1,9 @@
+// Vitest Snapshot v1
+
+exports[`Date helper > to2DigitsDateString > should convert correctly 1`] = `"14"`;
+
+exports[`Date helper > to2DigitsMonthString > should convert correctly 1`] = `"05"`;
+
+exports[`Date helper > toString > format: yyyy/mm/dd should convert to 2022/05/14 1`] = `"2022/05/14"`;
+
+exports[`Date helper > toString > format: yyyy-mm-dd should convert to 2022-05-14 1`] = `"2022-05-14"`;
