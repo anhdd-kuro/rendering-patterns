@@ -30,7 +30,8 @@ export const Template = (args) => <PButton {...args}>Click Me</PButton>;
     }}
     play={async ({ canvasElement }) => {
       const canvas = within(canvasElement);
-      await userEvent.click(canvas.getByText('Click Me'));
+      const button = canvas.getByText('Click Me');
+      await userEvent.click(button);
     }}
   >
     {Template.bind({})}
