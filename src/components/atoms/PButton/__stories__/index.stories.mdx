@@ -1,5 +1,7 @@
-import { PButton } from '..'
+import { PButton } from '..';
 import { Meta, Props, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { within, userEvent } from '@storybook/testing-library';
+import { expect } from '@storybook/jest';
 
 <Meta title="Atoms/PButton" component={PButton} />
 
@@ -7,15 +9,30 @@ import { Meta, Props, Story, Canvas } from '@storybook/addon-docs/blocks';
 
 Buttonコンポーネント
 
-# Template
-export const Template = (args) => <PButton {...args}> Click Me </PButton>;
+## Template
+
+export const Template = (args) => <PButton {...args}>Click Me</PButton>;
 
 ## Example
 
 <Canvas>
   <Story
-    name="PButton"
-    args={{}}>
+    name="Default Button"
+    args={{
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Clicked Button"
+    args={{
+      onClick: () => { alert("clicked") }
+    }}
+    play={async ({ canvasElement }) => {
+      const canvas = within(canvasElement);
+      const button = canvas.getByText('Click Me');
+      await userEvent.click(button);
+    }}
   >
     {Template.bind({})}
   </Story>

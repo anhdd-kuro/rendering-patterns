@@ -3,11 +3,12 @@ import { Style } from "@/helpers";
 
 type Props = {
   disabled?: boolean;
+  type?: "button" | "submit" | "reset";
   rounded?: boolean;
   bordered?: boolean;
   children?: React.ReactNode;
   backgroundColorClass?: TwBackgroundColorClass;
-  onClick?: void;
+  onClick?: () => void;
 };
 
 const disabledStyles = "opacity-60 cursor-not-allowed";
@@ -20,6 +21,7 @@ const PButton: React.FC<Props> = ({
   bordered = true,
   rounded = false,
   onClick,
+  type = "button",
   backgroundColorClass,
 }) => {
   return (
@@ -32,7 +34,8 @@ const PButton: React.FC<Props> = ({
         backgroundColorClass,
       )}
       disabled={disabled}
-      onClick={() => onClick}
+      type={type}
+      onClick={onClick}
     >
       {children}
     </button>
