@@ -1,5 +1,5 @@
 import z from "zod";
-import { memberSchema } from "@/features/member/domain";
+import { MemberInputSchema } from "@/features/member/domain";
 
 export const blogSchema = z.object({
   id: z.string(),
@@ -14,7 +14,7 @@ export const blogSchema = z.object({
     })
     .optional(),
   tags: z.string().array().optional(),
-  writer: memberSchema.pick({ nickname: true, imageUrl: true, role: true }),
+  writer: MemberInputSchema().pick({ nickname: true, imageUrl: true, role: true }),
 });
 
 export type Blog = z.infer<typeof blogSchema>;
