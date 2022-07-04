@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { z } from 'zod'
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
@@ -67,3 +68,25 @@ export type Thumbnail = {
   id: Scalars['ID'];
   src: Scalars['String'];
 };
+
+
+type Properties<T> = Required<{
+  [K in keyof T]: z.ZodType<T[K], any, T[K]>;
+}>;
+
+type definedNonNullAny = {};
+
+export const isDefinedNonNullAny = (v: any): v is definedNonNullAny => v !== undefined && v !== null;
+
+export const definedNonNullAnySchema = z.any().refine((v) => isDefinedNonNullAny(v));
+
+export function MemberInputSchema(): z.ZodObject<Properties<MemberInput>> {
+  return z.object({
+    catchCopy: z.string().nullish(),
+    firstName: z.string().nullish(),
+    imageUrl: z.string().nullish(),
+    lastName: z.string().nullish(),
+    nickname: z.string(),
+    role: z.string()
+  })
+}

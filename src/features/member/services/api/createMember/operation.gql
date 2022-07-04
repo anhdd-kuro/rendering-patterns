@@ -1,0 +1,9 @@
+#import { MemberFields } from '../fragments.gql'
+
+mutation CreateMember($input: MemberInput!) {
+  createMember(input: $input) {
+    id
+    nickname
+    role
+  }
+}
