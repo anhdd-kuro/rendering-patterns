@@ -1,5 +1,5 @@
 import { blogSchema } from "@/features/blog/domain";
-import { graphQLClient } from "@/infra/graphql";
+import { GraphQl } from "@/infra";
 import { gql } from "graphql-request";
 
 const query = gql`
@@ -26,7 +26,7 @@ const query = gql`
 `;
 
 export const fetchBlog = async () => {
-  const data = await graphQLClient.request(query);
+  const data = await GraphQl.graphQLClient.request(query);
 
   const validatedData = blogSchema.array().parse(data.blogs);
 
