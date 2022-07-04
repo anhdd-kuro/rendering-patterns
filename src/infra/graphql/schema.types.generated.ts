@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { z } from 'zod'
-export type Maybe<T> = T | null;
-export type InputMaybe<T> = Maybe<T>;
+export type Maybe<T> = T | undefined;
+export type InputMaybe<T> = T | undefined;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
@@ -19,8 +19,8 @@ export type Blog = {
   category: Scalars['String'];
   date: Scalars['String'];
   id: Scalars['ID'];
-  tags?: Maybe<Array<Maybe<Scalars['String']>>>;
-  thumbnail?: Maybe<Thumbnail>;
+  tags: Maybe<Array<Maybe<Scalars['String']>>>;
+  thumbnail: Maybe<Thumbnail>;
   title: Scalars['String'];
   url: Scalars['String'];
   writer: Member;
@@ -28,27 +28,27 @@ export type Blog = {
 
 export type Member = {
   __typename?: 'Member';
-  catchCopy?: Maybe<Scalars['String']>;
-  firstName?: Maybe<Scalars['String']>;
+  catchCopy: Maybe<Scalars['String']>;
+  firstName: Maybe<Scalars['String']>;
   id: Scalars['ID'];
-  imageUrl?: Maybe<Scalars['String']>;
-  lastName?: Maybe<Scalars['String']>;
+  imageUrl: Maybe<Scalars['String']>;
+  lastName: Maybe<Scalars['String']>;
   nickname: Scalars['String'];
   role: Scalars['String'];
 };
 
 export type MemberInput = {
-  catchCopy?: InputMaybe<Scalars['String']>;
-  firstName?: InputMaybe<Scalars['String']>;
-  imageUrl?: InputMaybe<Scalars['String']>;
-  lastName?: InputMaybe<Scalars['String']>;
+  catchCopy: InputMaybe<Scalars['String']>;
+  firstName: InputMaybe<Scalars['String']>;
+  imageUrl: InputMaybe<Scalars['String']>;
+  lastName: InputMaybe<Scalars['String']>;
   nickname: Scalars['String'];
   role: Scalars['String'];
 };
 
 export type Mutation = {
   __typename?: 'Mutation';
-  createMember?: Maybe<Member>;
+  createMember: Maybe<Member>;
 };
 
 
@@ -58,8 +58,8 @@ export type MutationCreateMemberArgs = {
 
 export type Query = {
   __typename?: 'Query';
-  blogs?: Maybe<Array<Maybe<Blog>>>;
-  members?: Maybe<Array<Maybe<Member>>>;
+  blogs: Maybe<Array<Maybe<Blog>>>;
+  members: Maybe<Array<Maybe<Member>>>;
 };
 
 export type Thumbnail = {

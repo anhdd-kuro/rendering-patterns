@@ -1,5 +1,5 @@
 import z from "zod";
-import { MemberInputSchema } from "@/features/member/domain";
+import { GraphQl } from "@/infra";
 
 export const blogSchema = z.object({
   id: z.string(),
@@ -14,7 +14,7 @@ export const blogSchema = z.object({
     })
     .optional(),
   tags: z.string().array().optional(),
-  writer: MemberInputSchema().pick({ nickname: true, imageUrl: true, role: true }),
+  writer: GraphQl.MemberInputSchema().pick({ nickname: true, imageUrl: true, role: true }),
 });
 
 export type Blog = z.infer<typeof blogSchema>;

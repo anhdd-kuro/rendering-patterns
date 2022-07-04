@@ -3,5 +3,6 @@ query GetAllMembers {
     id
     nickname
     role
+    catchCopy
   }
 }
