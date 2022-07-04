@@ -1,0 +1,25 @@
+import { PToast } from '..';
+import { Meta, Props, Story, Canvas } from '@storybook/addon-docs/blocks';
+
+<Meta title="Atoms/PToast" component={PToast} />
+
+# Overview
+
+PToastコンポーネント
+
+## Template
+export const Template = (args) => <PToast {...args} />;
+
+
+## Example
+
+<Canvas>
+  <Story
+    name="PToast"
+    args={{}}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Props story="PToast" />

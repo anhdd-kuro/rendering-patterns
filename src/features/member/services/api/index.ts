@@ -1,12 +1,12 @@
-import { memberSchema } from "@/features/member/domain";
-import { graphQLClient, createQueryFromObject } from "@/infra/graphqlClient";
+import { graphQLClient, Member } from "@/infra/graphql";
+import { MemberInputSchema, GetAllMembers } from "@/features/member/domain";
 
-const defaultQuery = createQueryFromObject("members", memberSchema.shape);
+import { z } from "zod";
 
-export const getMembers = async (query: string = defaultQuery) => {
-  const { members } = await graphQLClient.request(query);
+export const getAllMembers = async (): Promise<Member[]> => {
+  const { members } = await graphQLClient.request(GetAllMembers);
 
-  const validatedData = memberSchema.array().parse(members);
+  const validatedData = MemberInputSchema().extend({ id: z.string() }).array().parse(members);
 
   return validatedData;
 };

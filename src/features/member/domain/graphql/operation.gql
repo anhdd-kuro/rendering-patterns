@@ -1,4 +1,4 @@
-query GetMember {
+query GetAllMembers {
   members {
     ...MemberFields
   }

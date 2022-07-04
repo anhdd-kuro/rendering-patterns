@@ -4,12 +4,14 @@ import type { NextPage } from "next";
 import { useMembers } from "@/features/member/hooks";
 import { useMemo } from "react";
 import { useBlogs } from "@/features/blog/hooks";
+// import { toast } from "react-toastify";
 
 const Home: NextPage = () => {
   const { data: members } = useMembers();
+
   const displayMembers = useMemo(
     () =>
-      members?.map((member) => ({
+      members?.members?.map((member) => ({
         ...member,
       })) ?? [],
     [members],

@@ -1,20 +1,44 @@
-schema: './src/infra/mockedApi/schema.gql'
+schema: './src/infra/graphql/schema.gql'
 documents: './src/features/**/*.gql'
 generates:
-  ./src/infra/graphql/generated.ts:
+  src/infra/graphql/schema.types.generated.ts:
+    - typescript
+    - add:
+        content: '/* eslint-disable */'
+  src/:
+    preset: near-operation-file
+    presetConfig:
+      extension: .types.generated.ts
+      baseTypesPath: 'infra/graphql'
     plugins:
-      - typescript
       - typescript-operations
-      - typescript-react-query
+      - typescript-document-nodes
       - typescript-validation-schema
       - add:
           content: '/* eslint-disable */'
     config:
-      # fetcher: graphql-request
-      fetcher:
-        func: '@/infra/graphql/graphqlClient#fetcher'
-        isReactHook: false
+      importFrom: '@/infra/graphql'
       schema: zod
       scalarSchemas:
         Date: z.date()
         Email: z.string().email()
+
+  # ./src/infra/graphql/types.ts:
+  #   plugins:
+  #     - typescript
+  #     - typescript-operations
+  #     # - typescript-react-query
+  #     - typescript-document-nodes
+  #     - typescript-validation-schema
+  #     - add:
+  #         content: '/* eslint-disable */'
+  #   config:
+  #     # fetcher: graphql-request
+  #     # fetcher:
+  #     #   func: '@/infra/graphql#fetcher'
+  #     #   isReactHook: false
+  #     exposeQueryKeys: true
+  #     schema: zod
+  #     scalarSchemas:
+  #       Date: z.date()
+  #       Email: z.string().email()

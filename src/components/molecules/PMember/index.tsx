@@ -5,8 +5,8 @@ type Props = {
   interview?: {
     url: string;
   };
-  role: string;
-  nickname: string;
+  role?: string;
+  nickname?: string;
   catchCopy?: string;
   imageUrl?: string;
 };
