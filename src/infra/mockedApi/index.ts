@@ -1,12 +1,13 @@
 // @ts-nocheck
 import { createServer } from "miragejs";
 import { createGraphQLHandler } from "@miragejs/graphql";
-import graphQLSchema from "./schema.gql";
+import graphQLSchema from "@/infra/graphql/schema.gql";
 
 export function makeServer() {
   return createServer({
     urlPrefix: process.env.API_SERVER,
     routes() {
+      this.timing = 2000;
       // this.passthrough("/_next/static/development/_devPagesManifest.json");
       this.passthrough((request) => {
         if (request.url === "/_next/static/development/_devPagesManifest.json") return true;

@@ -37,7 +37,10 @@ export const PHome: React.FC<Props> = ({
       </section>
       <section
         id="members"
-        className={Style.clsx("flex flex-col", "border-blue-600 border-8 py-[100px] px-[200px] ")}
+        className={Style.clsx(
+          "flex flex-col items-center",
+          "border-blue-600 border-8 py-[100px] px-[200px] ",
+        )}
       >
         <div className="max-w-[1000px] w-full space-y-20">
           {membersSectionTitle || <h2>Members Title</h2>}

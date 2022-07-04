@@ -1,5 +1,6 @@
 import { blogSchema } from "@/features/blog/domain";
-import { graphQLClient, gql } from "@/infra/graphqlClient";
+import { graphQLClient } from "@/infra/graphql";
+import { gql } from "graphql-request";
 
 const query = gql`
   {

@@ -1,7 +1,10 @@
-import { addPrefixToKey } from "@/infra/queryClient";
+import { addPrefixToKey } from "@/infra/react-query";
 
-const keys = {
-  all: ["all"],
-} as const;
-
-export const memberKeys = Object.freeze(addPrefixToKey(keys, "member"));
+export const keys = Object.freeze(
+  addPrefixToKey(
+    {
+      getAll: ["getAll"],
+    },
+    "member",
+  ),
+);
