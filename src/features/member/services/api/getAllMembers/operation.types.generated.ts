@@ -5,7 +5,7 @@ import gql from 'graphql-tag';
 export type GetAllMembersQueryVariables = Types.Exact<{ [key: string]: never; }>;
 
 
-export type GetAllMembersQuery = { __typename?: 'Query', members?: Array<{ __typename?: 'Member', id: string, nickname: string, role: string } | null> | null };
+export type GetAllMembersQuery = { __typename?: 'Query', members?: Array<{ __typename?: 'Member', id: string, nickname: string, role: string, catchCopy?: string | null } | null> | null };
 
 
 export const GetAllMembers = gql`
@@ -14,6 +14,7 @@ export const GetAllMembers = gql`
     id
     nickname
     role
+    catchCopy
   }
 }
     `;

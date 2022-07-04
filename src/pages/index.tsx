@@ -11,7 +11,7 @@ const Home: NextPage = () => {
 
   const displayMembers = useMemo(
     () =>
-      members?.members?.map((member) => ({
+      members?.map((member) => ({
         ...member,
       })) ?? [],
     [members],
