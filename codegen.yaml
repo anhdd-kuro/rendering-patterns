@@ -2,9 +2,16 @@ schema: './src/infra/graphql/schema.gql'
 documents: './src/features/**/*.gql'
 generates:
   src/infra/graphql/schema.types.generated.ts:
-    - typescript
-    - add:
-        content: '/* eslint-disable */'
+    plugins:
+      - typescript
+      - typescript-validation-schema
+      - add:
+          content: '/* eslint-disable */'
+    config:
+      schema: zod
+      scalarSchemas:
+        Date: z.date()
+        Email: z.string().email()
   src/:
     preset: near-operation-file
     presetConfig:
@@ -13,15 +20,8 @@ generates:
     plugins:
       - typescript-operations
       - typescript-document-nodes
-      - typescript-validation-schema
       - add:
           content: '/* eslint-disable */'
-    config:
-      importFrom: '@/infra/graphql'
-      schema: zod
-      scalarSchemas:
-        Date: z.date()
-        Email: z.string().email()
 
   # ./src/infra/graphql/types.ts:
   #   plugins:
