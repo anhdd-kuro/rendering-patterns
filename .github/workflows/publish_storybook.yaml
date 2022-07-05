@@ -16,7 +16,6 @@ jobs:
           cache: "yarn"
           cache-dependency-path: '**/yarn.lock'
       - name: install dependencies
-        working-directory: ./
-        run: yarn install --frozen-lockfile
+        - run: yarn install --frozen-lockfile
       - name: publish storybook
         - run: yarn chromatic
