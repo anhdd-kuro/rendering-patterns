@@ -19,6 +19,8 @@ type Props = {
 };
 
 export const PBlog: React.FC<Props> = ({ data, heading, creditContent }) => {
+  console.log(data);
+
   return (
     <figure className="relative flex justify-between">
       <div role="img" className="relative w-32 h-32 overflow-hidden mr-10">
