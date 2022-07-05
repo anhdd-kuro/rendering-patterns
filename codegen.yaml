@@ -8,8 +8,7 @@ generates:
       - add:
           content: '/* eslint-disable */'
     config:
-      maybeValue: T | undefined
-      avoidOptionals: true
+      maybeValue: T | undefined | null
       schema: zod
       scalarSchemas:
         Date: z.date()
