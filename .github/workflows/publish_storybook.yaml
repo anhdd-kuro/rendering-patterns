@@ -1,4 +1,4 @@
-name: run tests
+name: publish_storybook
 
 on:
   push:
@@ -16,6 +16,6 @@ jobs:
           cache: "yarn"
           cache-dependency-path: '**/yarn.lock'
       - name: install dependencies
-        - run: yarn install --frozen-lockfile
+        run: yarn install --frozen-lockfile
       - name: publish storybook
-        - run: yarn chromatic
+        run: yarn chromatic
