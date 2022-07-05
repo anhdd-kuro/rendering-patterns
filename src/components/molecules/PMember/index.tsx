@@ -1,14 +1,11 @@
 import { PImage, PLink } from "@/components/atoms";
 import { Style } from "@/helpers";
+import { GraphQl } from "@/infra";
 
-type Props = {
+type Props = GraphQl.Member & {
   interview?: {
     url: string;
   };
-  role?: string;
-  nickname?: string;
-  catchCopy?: string;
-  imageUrl?: string;
 };
 
 export const PMember: React.FC<Props> = ({ interview, role, nickname, catchCopy, imageUrl }) => {
