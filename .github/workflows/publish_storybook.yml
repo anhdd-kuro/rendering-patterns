@@ -6,10 +6,10 @@ on:
       - main
 
 jobs:
-  unit-test:
+  publish_storybook:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version-file: ".node-version"
@@ -18,5 +18,4 @@ jobs:
       - name: install dependencies
         run: yarn install --frozen-lockfile
       - name: publish storybook
-        - run:
-            command: yarn chromatic
+        - run: yarn chromatic
