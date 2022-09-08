@@ -1,10 +1,10 @@
 import { GraphQl } from "@/infra";
-import { GetAllMembers } from "./operation.types.generated";
+import document from "@/features/operations.gql";
 
 import { z } from "zod";
 
 export const getAllMembers = async (): Promise<GraphQl.Member[]> => {
-  const { members } = await GraphQl.graphQLClient.request(GetAllMembers);
+  const { members } = await GraphQl.graphQLClient.request(document.getAllMember);
 
   const validatedData = GraphQl.MemberInputSchema()
     .extend({ id: z.string() })

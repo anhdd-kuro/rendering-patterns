@@ -1,0 +1,8 @@
+query GetAllMembers {
+  members {
+    id
+    nickname
+    role
+    catchCopy
+  }
+}
