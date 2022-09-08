@@ -2,6 +2,7 @@
 import { createServer } from "miragejs";
 import { createGraphQLHandler } from "@miragejs/graphql";
 import graphQLSchema from "@/infra/graphql/schema.gql";
+import graphQLSchemaTest from "./generated-schema.gql";
 
 export function makeServer() {
   return createServer({
