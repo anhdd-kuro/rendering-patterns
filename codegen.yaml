@@ -1,5 +1,4 @@
 schema: './src/infra/graphql/schema.gql'
-documents: './src/features/**/*.gql'
 generates:
   src/infra/graphql/schema.types.generated.ts:
     plugins:
@@ -17,10 +16,10 @@ generates:
     preset: near-operation-file
     presetConfig:
       extension: .types.generated.ts
-      baseTypesPath: 'infra/graphql'
+      baseTypesPath: 'infra/graphql/schema.types.generated.ts'
     plugins:
       - typescript-operations
-      - typescript-document-nodes
+      # - typescript-document-nodes
       - add:
           content: '/* eslint-disable */'
 
@@ -28,6 +27,7 @@ generates:
   #   plugins:
   #     - typescript
   #     - typescript-operations
+  #     scalarSchemas:
   #     # - typescript-react-query
   #     - typescript-document-nodes
   #     - typescript-validation-schema
