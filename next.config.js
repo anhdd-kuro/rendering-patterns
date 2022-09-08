@@ -10,11 +10,11 @@ const nextConfig = {
       exclude: /node_modules/,
       loader: "graphql-tag/loader",
     });
-    return config;
-  },
-  webpackDevMiddleware: (config) => {
-    console.log("Webpack config");
 
+    const fileLoaderRule = config.module.rules.find((rule) => rule.test && rule.test.test(".svg"));
+    fileLoaderRule.exclude = /\.svg$/;
+    // eslint-disable-next-line
+    config.module.rules.push(require("./svgr.shared-config"));
     return config;
   },
 };

@@ -6,7 +6,7 @@ import { QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { PToast } from "@/components";
 
-if (process.env.NODE_ENV === "development") {
+if (process.env.MOCKED_API === "true") {
   makeServer();
 }
 
