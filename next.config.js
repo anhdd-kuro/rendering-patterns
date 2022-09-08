@@ -13,6 +13,8 @@ const nextConfig = {
     return config;
   },
   webpackDevMiddleware: (config) => {
+    console.log("Webpack config");
+
     return config;
   },
 };
