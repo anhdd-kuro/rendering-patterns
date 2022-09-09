@@ -5,8 +5,6 @@ describe("Atoms/PButton", () => {
   describe("Button disabled", () => {
     const mockedOnClick = vi.fn();
 
-    let disabledButton: HTMLButtonElement, normalButton: HTMLButtonElement;
-
     beforeEach(() => {
       mockedOnClick.mockReset();
 
@@ -18,27 +16,30 @@ describe("Atoms/PButton", () => {
           <PButton onClick={mockedOnClick}>Normal Button</PButton>
         </>,
       );
-
-      disabledButton = screen.getByText("Disabled Button");
-      normalButton = screen.getByText("Normal Button");
     });
 
     afterEach(() => {
+      const disabledButton = screen.getByText<HTMLButtonElement>("Disabled Button");
       expect(disabledButton).matchSnapshot();
       expect(disabledButton).matchSnapshot();
     });
 
     test("render", () => {
-      expect(disabledButton).toBeDefined();
+      const disabledButton = screen.getByText<HTMLButtonElement>("Disabled Button");
+      expect(disabledButton).toBeInTheDocument();
       expect(disabledButton.tagName).toBe("BUTTON");
     });
 
     test("attributes", () => {
-      expect(disabledButton.getAttribute("disabled")).toBe("");
-      expect(normalButton.getAttribute("disabled")).toBeNull();
+      const disabledButton = screen.getByText<HTMLButtonElement>("Disabled Button");
+      const normalButton = screen.getByText<HTMLButtonElement>("Normal Button");
+      expect(disabledButton).toBeDisabled();
+      expect(normalButton).toBeEnabled();
     });
 
     test("click event", () => {
+      const disabledButton = screen.getByText<HTMLButtonElement>("Disabled Button");
+      const normalButton = screen.getByText<HTMLButtonElement>("Normal Button");
       fireEvent.click(disabledButton);
       expect(mockedOnClick).not.toBeCalled();
 
@@ -57,7 +58,7 @@ describe("Atoms/PButton", () => {
     test("should have button default type", () => {
       render(<PButton>Button</PButton>);
       button = screen.getByText("Button");
-      expect(button.getAttribute("type")).toBe("button");
+      expect(button).toHaveAttribute("type", "button");
 
       expect(button).matchSnapshot();
     });
@@ -65,7 +66,7 @@ describe("Atoms/PButton", () => {
     test("should have given type", () => {
       render(<PButton type="submit">Typed Button</PButton>);
       button = screen.getByText("Typed Button");
-      expect(button.getAttribute("type")).toBe("submit");
+      expect(button).toHaveAttribute("type", "submit");
     });
   });
 });
